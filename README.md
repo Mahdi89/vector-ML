@@ -15,8 +15,16 @@ Requirements
 * Java 8
 * Docker
 * Conda
+* tensorflow-2
 
 Part 1:
+
+First off, run the following to create a conda env and activate it:
+
+```
+conda env create -f environment.yml
+conda actiavte env
+```
 
 Run `make install` to install fmnist library
 and by running `make test` a CNN model will be trained and saved into `/tmp/1`
