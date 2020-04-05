@@ -58,10 +58,10 @@ kafka-topics --zookeeper localhost:2181 --create --topic ImageOutputTopic --part
 
 # The application is selected from Confluent Inc.
 
-mvn clean package 
+cd kafka-stream-app && mvn clean package 
 
 java -cp target/tensorflow-serving-java-grpc-kafka-streams-1.0-jar-with-dependencies.jar com.github.megachucky.kafka.streams.machinelearning.Kafka_Streams_TensorFlow_Serving_gRPC_Example
 
-echo -e "data/example.jpg" | kafkacat -b localhost:9092 -P -t ImageInputTopic
+echo -e "../data/example.jpg" | kafkacat -b localhost:9092 -P -t ImageInputTopic
 kafka-console-consumer --bootstrap-server localhost:9092 --topic ImageOutputTopic --from-beginning
 ```
