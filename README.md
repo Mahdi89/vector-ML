@@ -1,5 +1,6 @@
-#vector-ML
-Vector ML project
+## Vector ML project
+
+A data streaming platform based on Kafka for AI services
 
 This project has three main parts:
 
@@ -11,7 +12,7 @@ Requirements
 
 * Java 8
 * Docker
-
+* Conda
 
 Part 1:
 
@@ -44,7 +45,7 @@ kafka-topics --zookeeper localhost:2181 --create --topic ImageInputTopic --parti
 
             Deploy a Kafka Streams app that constantly read from `ImageInputTopic`, makes a TF service call and publishes the results to `ImageOutputTopic`.
 
-            The application is selected from Cofulent Inc.
+            The application is selected from Confluent Inc.
 
             mvn clean package 
 
