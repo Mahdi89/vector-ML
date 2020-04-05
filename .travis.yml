@@ -1,0 +1,7 @@
+sudo: false
+
+language: python
+env:
+    global: PROJECT_NAME="vector-ml"
+scripts:
+    - make install 
