@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Mahdi89/vector-ML.svg?branch=master)](https://travis-ci.com/Mahdi89/vector-ML)
+
 ## Vector ML project
 
 A data streaming platform based on Kafka for AI services
