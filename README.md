@@ -41,19 +41,19 @@ Part 3:
 Set up kafka 
 https://tecadmin.net/install-apache-kafka-ubuntu/
 
+```
 kafka-topics --zookeeper localhost:2181 --create --topic ImageInputTopic --partitions 3 --replication-factor 1
             
-            kafka-topics --zookeeper localhost:2181 --create --topic ImageOutputTopic --partitions 3 --replication-factor 1
+kafka-topics --zookeeper localhost:2181 --create --topic ImageOutputTopic --partitions 3 --replication-factor 1
 
-            Deploy a Kafka Streams app that constantly read from `ImageInputTopic`, makes a TF service call and publishes the results to `ImageOutputTopic`.
+# Deploy a Kafka Streams app that constantly read from `ImageInputTopic`, makes a TF service call and publishes the results to `ImageOutputTopic`.
 
-            The application is selected from Confluent Inc.
+# The application is selected from Confluent Inc.
 
-            mvn clean package 
+mvn clean package 
 
-            java -cp target/tensorflow-serving-java-grpc-kafka-streams-1.0-jar-with-dependencies.jar com.github.megachucky.kafka.streams.machinelearning.Kafka_Streams_TensorFlow_Serving_gRPC_Example
+java -cp target/tensorflow-serving-java-grpc-kafka-streams-1.0-jar-with-dependencies.jar com.github.megachucky.kafka.streams.machinelearning.Kafka_Streams_TensorFlow_Serving_gRPC_Example
 
-            echo -e "data/example.jpg" | kafkacat -b localhost:9092 -P -t ImageInputTopic
-
-            kafka-console-consumer --bootstrap-server localhost:9092 --topic ImageOutputTopic --from-beginning
-
+echo -e "data/example.jpg" | kafkacat -b localhost:9092 -P -t ImageInputTopic
+kafka-console-consumer --bootstrap-server localhost:9092 --topic ImageOutputTopic --from-beginning
+```
